@@ -1,0 +1,61 @@
+# config.yaml
+
+input:
+  path: data/
+
+
+preprocessing:
+  mito_prefix: "MT-"
+  min_genes: 200
+  min_cells: 3
+  max_mt_pct: 20.0
+  n_top_genes: 2000
+
+dimensionality:
+  n_comps: 50
+  n_neighbors: 15
+  method: "umap"            # "umap" or "tsne"
+
+clustering:
+  method: "leiden"          # "leiden" or "louvain"
+  resolution: 1.0
+  n_neighbors: 15
+  n_pcs: 50
+
+markers:
+  method: "wilcoxon"
+  logfc_min: 0.25
+  pval_adj_max: 0.05
+
+annotation:
+  enabled: true
+  model: "Immune_All_Low.pkl"
+
+plots:
+  qc: true
+  pca: true
+  embedding: true
+  clusters: true
+  markers: true
+  cell_types: true
+
+output:
+  adata_file: results/processed.h5ad
+  markers_file: results/markers.csv
+
+integration:
+  enabled: false
+  method: harmony   # or bbknn
+  batch_key: batch
+  files:
+    - data/sample1/
+    - data/sample2/
+
+pathway:
+  enabled: true
+  output_dir: results/pathways
+  top_n: 50
+
+report:
+  enabled: true
+  output_dir: results/report

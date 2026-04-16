@@ -1,0 +1,31 @@
+# Core scientific stack
+numpy>=1.23
+pandas>=1.5
+scipy>=1.9
+
+# Single-cell analysis
+scanpy>=1.9.6
+anndata>=0.9.2
+
+# Visualization
+matplotlib>=3.6
+seaborn>=0.12
+
+# Graph clustering dependencies
+networkx>=2.8
+python-igraph>=0.10
+leidenalg>=0.9
+
+# Dimensionality reduction
+umap-learn>=0.5
+
+# YAML config handling
+pyyaml>=6.0
+celltypist==1.7.1
+
+# Optional (recommended for performance & compatibility)
+scikit-learn>=1.2
+h5py>=3.8
+tqdm>=4.65
+
+gseapy>=1.0.0
